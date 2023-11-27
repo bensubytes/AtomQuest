@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Button : MonoBehaviour
+public class Buttons : MonoBehaviour
 {
     public string buttonName; // You might want to identify buttons by name
     private bool isGreyedOut = false;
+    public object onClick;
 
     // Check if the button is part of a correct pair
-    public bool IsCorrectPair(Button otherButton)
+   /* public bool IsCorrectPair(Button otherButton)
     {
         // Implement your logic for checking correct pairs
         // For example, compare the names or IDs of the buttons
-        return buttonName == otherButton.buttonName;
-    }
+        //return buttonName == otherButton.buttonName;
+    }*/
 
     // Check if the button is already greyed out
     public bool IsGreyedOut()

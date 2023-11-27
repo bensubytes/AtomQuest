@@ -1,63 +1,130 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Networking;
+using UnityEngine.UI;
+using TMPro;
 public class UploadData : MonoBehaviour
 {
     private string googleSheetDocUD;
     private string url;
-    public static bool finishedLoading;
 
+    public ToggleGroup toggleGroup1;
+    public ToggleGroup toggleGroup2;
+
+    private int[] toggleValues;
+
+    public Button submitButton;
+
+    private string URL =
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf_169Qtmd3uZxlIX_AM-kdZjAqnrqiUsEuH74XQBNUQpE5Cw/formResponse";
+        
+    private string[] googleFormOptions = { "False", "True" }; 
+
+    private string[] entryIDs =
+    {
+        "entry.2122923367",
+        "entry.1449255233",
+        "entry.2513360",
+        "entry.130381684",
+        "entry.643161201",
+        "entry.896110038",
+        "entry.140061374",
+        "entry.678762217",
+        "entry.945203479",
+        "entry.779661951",
+    };
     
-
-    private string URL = "https://docs.google.com/forms/d/e/1FAIpQLSf_169Qtmd3uZxlIX_AM-kdZjAqnrqiUsEuH74XQBNUQpE5Cw/viewform?usp=sharing";
-
-    public void Start()
+    void Start()
     {
-        /*var results = Results.GetLatestResults();
-        string text =
-            $"The player is ~{results.Age}old. \n" +
-            $"The player is ~{results.Student} a student. \n" +
-            $"The player {(results.Gamer} plays games frequently. \n";
-
-        if (results.CompletedQuiz > 0) text +=
-            $"Question 1; {results.QuestionOne}\n" +
-            $"Question 2; {results.QuestionTwo}\n" +
-            $"Question 3; {results.QuestionThree}\n" +
-            $"Question 4; {results.QuestionFour}\n" +
-            $"Question 5; {results.QuestionFive}\n" +
-            $"Question 6; {results.QuestionSix}\n" +
-            $"Question 7; {results.QuestionSeven}\n" +
-            $"Question 8; {results.QuestionEight}\n" +
-            $"Question 9; {results.QuestionNine}\n" +
-            $"Question 10; {results.QuestionTen}\n\n";
-
-        GetComponent<Text>().text = text;
-
+        toggleValues = new int[entryIDs.Length];
+        
+        
+        submitButton.onClick.AddListener(Submit);
 
     }
 
-    public void Send()
+ 
+    void OnToggleValueChanged(int index)
     {
-        StartCorotuine(Post(GetComponent<Text>().text));
-    }
-   
+        Toggle[] toggles = GetToggles(index);
+        int selectedOption = -1; // -1 represents no option selected
 
-    public IEnumerator UploadUserData(string s1)
+        for (int i = 0; i < toggles.Length; i++)
+        {
+            if (toggles[i].isOn)
+            {
+                selectedOption = i;
+                toggleValues[index] = selectedOption;
+            }
+        }
+
+        if (selectedOption == -1)
+        {
+            // If no toggle is selected, you may want to handle this case
+            toggleValues[index] = -1;
+        }
+    }
+    
+    // Method to get all toggles in a specific group
+    Toggle[] GetToggles(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                return toggleGroup1.GetComponentsInChildren<Toggle>();
+            case 1:
+                return toggleGroup2.GetComponentsInChildren<Toggle>();
+            // Add cases for the rest of the questions
+            default:
+                return null;
+        }
+    }
+    void Submit()
+    {
+        // Check if all toggles have been changed
+        bool allTogglesChanged = true;
+        for (int i = 0; i < toggleValues.Length; i++)
+        {
+            if (toggleValues[i] == -1) // No option selected
+            {
+                allTogglesChanged = false;
+                break;
+            }
+        }
+
+        // If all toggles have been changed, upload the data
+        if (allTogglesChanged)
+        {
+            for (int i = 0; i < toggleValues.Length; i++)
+            {
+                StartCoroutine(UploadUserData(entryIDs[i], googleFormOptions[toggleValues[i]]));
+            }
+
+            // Optionally, disable the button after submission
+            submitButton.interactable = false;
+        }
+        else
+        {
+            Debug.Log("Please select one option for each question before submitting.");
+        }
+    }
+
+    IEnumerator UploadUserData(string entryID, string value)
     {
         WWWForm form = new WWWForm();
-        form.AddField("entry.2134750902", s1);
+        form.AddField(entryID, value);
 
         UnityWebRequest www = UnityWebRequest.Post(URL, form);
 
-        yield return www.SendWebRequesz();
+        yield return www.SendWebRequest();
 
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError(www.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete!");
+        }
     }
-
-    public static GetInformation()
-    {
-        string fileName = Path.GetFileName(Results.PathToLatestCSVFile);
-        return fileName.Substring(17, Math.Min(0, fileName.Length - 17 - 9 - 37));*/
-    }
-    
 }

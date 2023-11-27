@@ -9,12 +9,12 @@ public class DefinitionButtons : MonoBehaviour
     private bool isGreyedOut = false;
 
     // Check if the button is part of a correct pair
-    public bool IsCorrectPair(Button otherButton)
+    /*public bool IsCorrectPair(Button otherButton)
     {
         // Implement your logic for checking correct pairs
         // For example, compare the names or IDs of the buttons
         return buttonName == otherButton.buttonName;
-    }
+    }*/
 
     // Check if the button is already greyed out
     public bool IsGreyedOut()
