@@ -1,5 +1,5 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
@@ -10,6 +10,14 @@ public class UploadData : MonoBehaviour
 
     public ToggleGroup toggleGroup1;
     public ToggleGroup toggleGroup2;
+    public ToggleGroup toggleGroup3;
+    public ToggleGroup toggleGroup4;
+    public ToggleGroup toggleGroup5;
+    public ToggleGroup toggleGroup6;
+    public ToggleGroup toggleGroup7;
+    public ToggleGroup toggleGroup8;
+    public ToggleGroup toggleGroup9;
+    public ToggleGroup toggleGroup10;
 
     private int[] toggleValues;
 
@@ -17,8 +25,8 @@ public class UploadData : MonoBehaviour
 
     private string URL =
         "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf_169Qtmd3uZxlIX_AM-kdZjAqnrqiUsEuH74XQBNUQpE5Cw/formResponse";
-        
-    private string[] googleFormOptions = { "False", "True" }; 
+
+    private string[] googleFormOptions = { "False", "True" };
 
     private string[] entryIDs =
     {
@@ -33,17 +41,17 @@ public class UploadData : MonoBehaviour
         "entry.945203479",
         "entry.779661951",
     };
-    
+
     void Start()
     {
         toggleValues = new int[entryIDs.Length];
-        
-        
+
+
         submitButton.onClick.AddListener(Submit);
 
     }
 
- 
+
     void OnToggleValueChanged(int index)
     {
         Toggle[] toggles = GetToggles(index);
@@ -64,7 +72,7 @@ public class UploadData : MonoBehaviour
             toggleValues[index] = -1;
         }
     }
-    
+
     // Method to get all toggles in a specific group
     Toggle[] GetToggles(int index)
     {
@@ -74,6 +82,24 @@ public class UploadData : MonoBehaviour
                 return toggleGroup1.GetComponentsInChildren<Toggle>();
             case 1:
                 return toggleGroup2.GetComponentsInChildren<Toggle>();
+            case 2:
+                return toggleGroup3.GetComponentsInChildren<Toggle>();
+            case 3:
+                return toggleGroup4.GetComponentsInChildren<Toggle>();
+            case 4:
+                return toggleGroup5.GetComponentsInChildren<Toggle>();
+            case 5:
+                return toggleGroup6.GetComponentsInChildren<Toggle>();
+            case 6:
+                return toggleGroup7.GetComponentsInChildren<Toggle>();
+            case 7:
+                return toggleGroup8.GetComponentsInChildren<Toggle>();
+            case 8:
+                return toggleGroup9.GetComponentsInChildren<Toggle>();
+            case 9:
+                return toggleGroup10.GetComponentsInChildren<Toggle>();
+           
+
             // Add cases for the rest of the questions
             default:
                 return null;
@@ -102,6 +128,7 @@ public class UploadData : MonoBehaviour
 
             // Optionally, disable the button after submission
             submitButton.interactable = false;
+           
         }
         else
         {
@@ -127,4 +154,6 @@ public class UploadData : MonoBehaviour
             Debug.Log("Form upload complete!");
         }
     }
+
+    
 }
