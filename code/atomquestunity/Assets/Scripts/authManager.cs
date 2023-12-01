@@ -4,12 +4,13 @@ using UnityEngine;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
 using System.Threading.Tasks;
-using UnityEngine.UI;
-
+// Add this using statement for TextMeshPro
+using TMPro;
 
 public class authManager : MonoBehaviour
 {
-    public Text logTxt;
+    // Change Text to TextMeshProUGUI
+    public TextMeshProUGUI logTxt;
 
     async void Start()
     {
@@ -29,6 +30,7 @@ public class authManager : MonoBehaviour
 
             print("Sign in Success");
             print("Player Id:" + AuthenticationService.Instance.PlayerId);
+            // Use text property for TextMeshPro
             logTxt.text = "Player id:" + AuthenticationService.Instance.PlayerId;
         }
         catch (AuthenticationException ex)
@@ -38,3 +40,4 @@ public class authManager : MonoBehaviour
         }
     }
 }
+

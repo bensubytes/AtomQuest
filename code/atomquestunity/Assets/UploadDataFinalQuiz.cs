@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
-public class UploadData : MonoBehaviour
+public class UploadDataFinalQuiz : MonoBehaviour
 {
     private string googleSheetDocUD;
     private string url;
@@ -24,22 +24,22 @@ public class UploadData : MonoBehaviour
     public Button submitButton;
 
     private string URL =
-        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf_169Qtmd3uZxlIX_AM-kdZjAqnrqiUsEuH74XQBNUQpE5Cw/formResponse";
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeph014CNb0GK2dNYravbzqiSQxjIQKZChbKsD0G0U5q8IwOQ/formResponse";
 
     private string[] googleFormOptions = { "False", "True" };
 
     private string[] entryIDs =
     {
-        "entry.2122923367",
-        "entry.1449255233",
-        "entry.2513360",
-        "entry.130381684",
-        "entry.643161201",
-        "entry.896110038",
-        "entry.140061374",
-        "entry.678762217",
-        "entry.945203479",
-        "entry.779661951",
+        "entry.2076876060",
+        "entry.992569325",
+        "entry.1319909424",
+        "entry.580857628",
+        "entry.1937036566",
+        "entry.852606929",
+        "entry.763047478",
+        "entry.785923666",
+        "entry.928727109",
+        "entry.45900614",
     };
 
     void Start()
@@ -52,10 +52,10 @@ public class UploadData : MonoBehaviour
     }
 
 
-    void OnToggleValueChanged(int index)
+    public void OnToggleValueChanged(int index)
     {
         Toggle[] toggles = GetToggles(index);
-        int selectedOption = -1; 
+        int selectedOption = -1;
 
         for (int i = 0; i < toggles.Length; i++)
         {
@@ -68,12 +68,12 @@ public class UploadData : MonoBehaviour
 
         if (selectedOption == -1)
         {
-            
+
             toggleValues[index] = -1;
         }
     }
 
-    
+
     Toggle[] GetToggles(int index)
     {
         switch (index)
@@ -98,9 +98,9 @@ public class UploadData : MonoBehaviour
                 return toggleGroup9.GetComponentsInChildren<Toggle>();
             case 9:
                 return toggleGroup10.GetComponentsInChildren<Toggle>();
-           
 
-            
+
+
             default:
                 return null;
         }
@@ -110,24 +110,20 @@ public class UploadData : MonoBehaviour
         bool allTogglesChanged = true;
         for (int i = 0; i < toggleValues.Length; i++)
         {
-            if (toggleValues[i] == -1) 
+            if (toggleValues[i] == -1)
             {
                 allTogglesChanged = false;
                 break;
             }
         }
 
-       
         if (allTogglesChanged)
         {
             for (int i = 0; i < toggleValues.Length; i++)
             {
                 StartCoroutine(UploadUserData(entryIDs[i], googleFormOptions[toggleValues[i]]));
             }
-
-            
             submitButton.interactable = false;
-           
         }
         else
         {
@@ -151,9 +147,9 @@ public class UploadData : MonoBehaviour
         else
         {
             Debug.Log("Form upload complete!");
-            
+
         }
     }
 
-    
+
 }
