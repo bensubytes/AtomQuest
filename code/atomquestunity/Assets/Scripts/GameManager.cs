@@ -38,7 +38,9 @@ public class GameManager : MonoBehaviour
         //change displayed name
         nameTag.GetComponentInChildren<TextMeshProUGUI>().text = item.objectName;
         nameTag.sizeDelta = item.nameTagSize;
-        nameTag.localPosition = new Vector2(item.nameTagSize.x/2, -0.5f);
+        Vector2 mousePosition = Input.mousePosition;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(nameTag.parent as RectTransform, mousePosition, Camera.main, out Vector2 localPoint);
+        nameTag.localPosition = localPoint + new Vector2(item.nameTagSize.x / 4, -0.25f);
     }
 
     public void UpdateHintTag(ItemData item, bool playerFlipped)

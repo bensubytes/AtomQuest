@@ -25,13 +25,16 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
     }
-    
+
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("OnDrag");
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor * Time.deltaTime;
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out Vector2 localPoint);
+        rectTransform.anchoredPosition = localPoint;
     }
-    
+
+
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("OnEndDrag");

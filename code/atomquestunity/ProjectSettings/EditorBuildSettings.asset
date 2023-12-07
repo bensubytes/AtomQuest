@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Pre-Quiz.unity
     guid: 9773265be91714c40ba7174ede69400e
   - enabled: 1
-    path: Assets/Scenes/Introduction.unity
+    path: Assets/Scenes/Unused.unity
     guid: 991c54c7ffbb2c545906ed64cf7a5c75
   - enabled: 1
     path: Assets/Scenes/Level1.unity
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Post-Quiz.unity
     guid: a9799d377983c8d49b492aafd00e47a3
+  - enabled: 1
+    path: Assets/Scenes/Introduction.unity
+    guid: ea191c9ff0191bc4295481d667bf828c
   m_configObjects: {}

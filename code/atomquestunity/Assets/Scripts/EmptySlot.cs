@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class EmptySlot : MonoBehaviour, IDropHandler
 {
     public int id;
+    public float snapThreshold = 50f; 
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -14,8 +15,21 @@ public class EmptySlot : MonoBehaviour, IDropHandler
         {
             if (eventData.pointerDrag.GetComponent<DragDrop>().id == id)
             {
-                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
-                this.GetComponent<RectTransform>().anchoredPosition;
+                RectTransform draggedRectTransform = eventData.pointerDrag.GetComponent<RectTransform>();
+                RectTransform emptySlotRectTransform = GetComponent<RectTransform>();
+
+               
+                float distance = Vector2.Distance(draggedRectTransform.anchoredPosition, emptySlotRectTransform.anchoredPosition);
+
+                if (distance <= snapThreshold)
+                {
+                    draggedRectTransform.anchoredPosition = emptySlotRectTransform.anchoredPosition;
+                }
+                else
+                {
+                    
+                    eventData.pointerDrag.GetComponent<DragDrop>().ResetPosition();
+                }
             }
             else
             {
