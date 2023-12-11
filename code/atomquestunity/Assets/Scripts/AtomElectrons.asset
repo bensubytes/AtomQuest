@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b388e11cf5a4074b870aa69123ba834, type: 3}
+  m_Name: AtomElectrons
+  m_EditorClassIdentifier: 
+  frameOfGap: 0
+  sprites:
+  - {fileID: 21300000, guid: d5e7ef5b365fc32439845ea92b403dc3, type: 3}
+  - {fileID: 21300000, guid: 3261f9a8e8c4cc24490826f39c568fc1, type: 3}
+  - {fileID: 21300000, guid: 68b5f675a7f3499498dbf1389a09a82c, type: 3}
+  - {fileID: 21300000, guid: 7900a91f832727247b29dc82b657232d, type: 3}
+  - {fileID: 21300000, guid: ae66bfa3e68e5794098a8ffb96a10a02, type: 3}
+  - {fileID: 21300000, guid: 1b5c13f0750d6544fbd069db621a3bd9, type: 3}
+  - {fileID: 21300000, guid: 2b32bc4ebcb0b5940854d9b939bb9180, type: 3}
+  - {fileID: 21300000, guid: a43621a1be0b73e408b54f666ab112f7, type: 3}
+  - {fileID: 21300000, guid: 43a48c6c360269343bf7f8c2b23237b2, type: 3}
+  - {fileID: 21300000, guid: c9d7ae3978638fc4b948dc9fc925966f, type: 3}
+  loop: 0

@@ -21,7 +21,7 @@ public class ClickManager : MonoBehaviour
         //update hint box
         gameManager.UpdateHintTag(null, false);
         //play walk animation
-        playerTransform.GetComponent<SpriteAnimator>().PlayAnimation(gameManager.playerAnimations[1]); 
+        playerTransform.GetComponent<SpriteAnimator>().PlayAnimation(gameManager.playerAnimations[0]); 
         playerWalking = true;
         //start moving player
         StartCoroutine(gameManager.MoveToPoint(playerTransform, item.goToPoint.position));
