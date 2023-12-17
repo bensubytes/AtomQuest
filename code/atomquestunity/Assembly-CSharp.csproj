@@ -42,10 +42,12 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\NumberInput.cs" />
+     <Compile Include="Assets\KnowledgeManager.cs" />
      <Compile Include="Assets\Scripts\Questions.cs" />
      <Compile Include="Assets\Scripts\Playermovement.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\QuitGame.cs" />
+     <Compile Include="Assets\IntroductionSceneManager.cs" />
      <Compile Include="Assets\Scripts\LineTest.cs" />
      <Compile Include="Assets\Scripts\EmptySlot.cs" />
      <Compile Include="Assets\Scripts\ClickManager.cs" />
@@ -58,11 +60,13 @@
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Gradient.cs" />
      <Compile Include="Assets\Scripts\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\LineRendererManager.cs" />
+     <Compile Include="Assets\MapRevealManager.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\SpriteSwapper.cs" />
      <Compile Include="Assets\Scripts\SpriteAnimator.cs" />
      <Compile Include="Assets\Scripts\ItemData.cs" />
      <Compile Include="Assets\UploadDataFinalQuiz.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Transition.cs" />
+     <Compile Include="Assets\ButtonClickHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerIdleState.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Tooltip.cs" />
      <Compile Include="Assets\Scripts\DefinitionButtons.cs" />
@@ -83,6 +87,7 @@
      <Compile Include="Assets\IntroManager.cs" />
      <Compile Include="Assets\Scripts\QuizManager.cs" />
      <Compile Include="Assets\UploadData.cs" />
+     <Compile Include="Assets\Quit.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Sprites\changelog.txt" />
@@ -894,6 +899,18 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Samples.SampleScene.csproj">
+      <Project>{bcbf5c03-eeb3-fab7-68aa-5ebcf03db930}</Project>
+      <Name>Unity.PlayerPrefsEditor.Samples.SampleScene</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.EditorResources.csproj">
+      <Project>{bc0805d0-ea4d-5b09-67ac-ab491944bff9}</Project>
+      <Name>Unity.PlayerPrefsEditor.EditorResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Editor.csproj">
+      <Project>{97d9de57-0d8b-271b-6143-653b40ca2745}</Project>
+      <Name>Unity.PlayerPrefsEditor.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

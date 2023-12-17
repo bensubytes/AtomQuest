@@ -6,7 +6,11 @@ using UnityEngine.EventSystems;
 public class EmptySlot : MonoBehaviour, IDropHandler
 {
     public int id;
-    public float snapThreshold = 50f; 
+    public float snapThreshold = 50f;
+    public Brainbar brainbar;
+    public int knowledgePoints = 5;
+
+    public KnowledgeManager knowledgeManager;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -24,6 +28,8 @@ public class EmptySlot : MonoBehaviour, IDropHandler
                 if (distance <= snapThreshold)
                 {
                     draggedRectTransform.anchoredPosition = emptySlotRectTransform.anchoredPosition;
+                    knowledgeManager.ObjectDroppedCorrectly();
+                   
                 }
                 else
                 {
@@ -37,4 +43,5 @@ public class EmptySlot : MonoBehaviour, IDropHandler
             }
         }
     }
+
 }

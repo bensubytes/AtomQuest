@@ -32,6 +32,22 @@ namespace Ricimi
             RemoveBackground();
             StartCoroutine(RunPopupDestroy());
         }
+        public void OnCloseButtonClick()
+        {
+            // Find the MapRevealManager in the scene
+            MapRevealManager mapRevealManager = GameObject.FindObjectOfType<MapRevealManager>();
+            int completedLevels = PlayerPrefs.GetInt("CompletedLevels");
+            if (mapRevealManager != null)
+            {
+                // Deactivate map parts when the close button is clicked
+                mapRevealManager.DeactivateMapImages(completedLevels);
+            }
+            else
+            {
+                Debug.LogError("MapRevealManager not found in the scene!");
+            }
+        }
+        
 
         // We destroy the popup automatically 0.5 seconds after closing it.
         // The destruction is performed asynchronously via a coroutine. If you
