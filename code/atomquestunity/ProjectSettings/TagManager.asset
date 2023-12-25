@@ -6,11 +6,15 @@ TagManager:
   tags:
   - DefinitionButtons
   - Map
+  - Background
+  - Collectable
+  - Obstacle
+  - Quiz
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacle
   - Water
   - UI
   - 
@@ -45,4 +49,13 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 278891333
+    locked: 0
+  - name: Collectables
+    uniqueID: 2430012851
+    locked: 0
+  - name: Obstacle
+    uniqueID: 618234549
+    locked: 0
+  - name: Player
+    uniqueID: 1977999953
     locked: 0

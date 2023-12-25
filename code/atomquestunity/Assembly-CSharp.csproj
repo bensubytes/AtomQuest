@@ -57,6 +57,7 @@
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\URLOpener.cs" />
      <Compile Include="Assets\Scripts\PlayerBaseState.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\CleanButton.cs" />
+     <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Utils.cs" />
      <Compile Include="Assets\Quit.cs" />
      <Compile Include="Assets\Scripts\DraggableObject.cs" />

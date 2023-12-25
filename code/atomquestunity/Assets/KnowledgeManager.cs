@@ -42,6 +42,10 @@ public class KnowledgeManager : MonoBehaviour
         Debug.Log("Completed Levels (PlayerPrefs) Saved: " + completedLevels);
     }
 
+    public bool HasEnoughKnowledge(float requiredKnowledge)
+    {
+        return currentKnowledge >= requiredKnowledge;
+    }
 
 
     public void ObjectDroppedCorrectly()
