@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour
     public bool isMoving;
     public bool collectable = false;
     public KnowledgeManager knowledgeManager;
+    public DialogueTrigger dialogueTrigger;
     public float requiredKnowledge = 6f;
     
     private RaycastHit2D hit;

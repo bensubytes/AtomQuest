@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\DraggableObject.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Gradient.cs" />
      <Compile Include="Assets\Scripts\CameraZoom.cs" />
+     <Compile Include="Assets\Inventory.cs" />
      <Compile Include="Assets\Scripts\LineRendererManager.cs" />
      <Compile Include="Assets\MapRevealManager.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\SpriteSwapper.cs" />
@@ -78,6 +79,7 @@
      <Compile Include="Assets\Scripts\authManager.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Popup.cs" />
      <Compile Include="Assets\Scripts\AnimationData.cs" />
+     <Compile Include="Assets\Pickup.cs" />
      <Compile Include="Assets\Scripts\PlayerJumpingState.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\PopupOpener.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
