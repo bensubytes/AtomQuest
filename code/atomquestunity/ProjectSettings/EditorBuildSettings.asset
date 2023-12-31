@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Unused.unity
     guid: 991c54c7ffbb2c545906ed64cf7a5c75
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: 737b3f01d65c77e438329a116d759666
   - enabled: 0
@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/GUIPack-Clean&Minimalist/Demo/Scenes/Themes/Light/Light - Home.unity
     guid: 99f809d9248fc47a89ada8356ab3acbb
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: c56e0dae64f6d5146b0fa1ce970f4aff
   m_configObjects: {}

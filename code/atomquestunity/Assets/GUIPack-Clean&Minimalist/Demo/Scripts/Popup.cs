@@ -35,9 +35,9 @@ namespace Ricimi
         public void OnCloseButtonClick()
         {
             // Find the MapRevealManager in the scene
-            MapRevealManager mapRevealManager = GameObject.FindObjectOfType<MapRevealManager>();
+            /*MapRevealManager mapRevealManager = GameObject.FindObjectOfType<MapRevealManager>();*/
             int completedLevels = PlayerPrefs.GetInt("CompletedLevels");
-            if (mapRevealManager != null)
+            /*if (mapRevealManager != null)
             {
                 // Deactivate map parts when the close button is clicked
                 mapRevealManager.DeactivateMapImages(completedLevels);
@@ -45,7 +45,7 @@ namespace Ricimi
             else
             {
                 Debug.LogError("MapRevealManager not found in the scene!");
-            }
+            }*/
         }
         
 
