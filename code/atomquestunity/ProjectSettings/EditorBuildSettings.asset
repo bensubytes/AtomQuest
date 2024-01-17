@@ -11,40 +11,73 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 9f42d08649d01f240a2f320b6355ac32
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MenuFixed.unity
     guid: aa726ba6735aebe4580f610e38a5a570
-  - enabled: 0
-    path: Assets/Scenes/Cutscene.unity
-    guid: 413780bde0248554598d7bb23f324037
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Pre-Quiz.unity
     guid: 9773265be91714c40ba7174ede69400e
-  - enabled: 0
-    path: Assets/Scenes/Introduction.unity
-    guid: ea191c9ff0191bc4295481d667bf828c
-  - enabled: 0
-    path: Assets/Scenes/Unused.unity
-    guid: 991c54c7ffbb2c545906ed64cf7a5c75
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: 413780bde0248554598d7bb23f324037
+  - enabled: 1
+    path: Assets/Scenes/InitialScene1.unity
+    guid: 542a14dd69936bc44b12ff3c54cb0fb8
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 737b3f01d65c77e438329a116d759666
-  - enabled: 0
-    path: Assets/Scenes/Introduction1.unity
-    guid: 7152d9c8cec93a940be7252f7c19dbfc
-  - enabled: 0
-    path: Assets/Scenes/Level2-OLD.unity
-    guid: 3154c36a245f6ea4ebe9fcc915de52b6
-  - enabled: 0
-    path: Assets/Scenes/Level3-OLD.unity
-    guid: 43d9744796c1c964aa871a6807effb14
-  - enabled: 0
-    path: Assets/Scenes/Post-Quiz.unity
-    guid: a9799d377983c8d49b492aafd00e47a3
-  - enabled: 0
-    path: Assets/GUIPack-Clean&Minimalist/Demo/Scenes/Themes/Light/Light - Home.unity
-    guid: 99f809d9248fc47a89ada8356ab3acbb
+  - enabled: 1
+    path: Assets/Scenes/InitialScene2.unity
+    guid: d5f205c659ed4f849b9873368f037c70
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: c56e0dae64f6d5146b0fa1ce970f4aff
+  - enabled: 1
+    path: Assets/Scenes/InitialScene3.unity
+    guid: 5b50eb9c3aa9a0b4e89d4f26d6154813
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 850e1dcdc31661a4daf43294811eef08
+  - enabled: 1
+    path: Assets/Scenes/InitialScene4.unity
+    guid: 1549bab461fd7be408e5b9b8299c3d12
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: 91d2c217e9fd7ef4e8f39de8947aecea
+  - enabled: 1
+    path: Assets/Scenes/InitialScene5.unity
+    guid: e825df31b4c3344408768807917449a7
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: b32ee04bbbfae2b4fa85f86480799cde
+  - enabled: 1
+    path: Assets/Scenes/Cutscene2.unity
+    guid: 2114ca29acca2634b968f883b825de20
+  - enabled: 1
+    path: Assets/Scenes/Post-Quiz.unity
+    guid: d8d282464fee5c145b5fa8bf36c921d3
+  - enabled: 0
+    path: Assets/Post-QuizOLD.unity
+    guid: a9799d377983c8d49b492aafd00e47a3
+  - enabled: 0
+    path: Assets/Unused/Introduction.unity
+    guid: ea191c9ff0191bc4295481d667bf828c
+  - enabled: 0
+    path: Assets/Unused/Unused.unity
+    guid: 991c54c7ffbb2c545906ed64cf7a5c75
+  - enabled: 0
+    path: Assets/Unused/Introduction1.unity
+    guid: 7152d9c8cec93a940be7252f7c19dbfc
+  - enabled: 0
+    path: Assets/Unused/Introduction2.unity
+    guid: cda11fc79f58c944391510d3123033b5
+  - enabled: 0
+    path: Assets/Unused/Level2-OLD.unity
+    guid: 3154c36a245f6ea4ebe9fcc915de52b6
+  - enabled: 0
+    path: Assets/Unused/Level3-OLD.unity
+    guid: 43d9744796c1c964aa871a6807effb14
+  - enabled: 0
+    path: Assets/GUIPack-Clean&Minimalist/Demo/Scenes/Themes/Light/Light - Home.unity
+    guid: 99f809d9248fc47a89ada8356ab3acbb
   m_configObjects: {}

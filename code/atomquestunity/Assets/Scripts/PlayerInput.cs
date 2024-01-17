@@ -14,64 +14,62 @@ public class PlayerInput : MonoBehaviour
     public bool isMoving;
     public bool collectable = false;
     public KnowledgeManager knowledgeManager;
-    public DialogueTrigger dialogueTrigger;
     public float requiredKnowledge = 6f;
     
     private RaycastHit2D hit;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Camera.main != null)
         {
-            mouseScreenPos = Input.mousePosition;
-            mouseWorldPos = mainCam.ScreenToWorldPoint(mouseScreenPos);
-            hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-
-            if (hit.collider != null)
-            {
-                if (hit.collider.CompareTag("Background"))
-                {
-                    targetPos = mouseWorldPos;
-                    isMoving = true;
-                    CheckSpriteFlip();
-                }
-                else if (hit.collider.CompareTag("Collectable"))
-                {
-                    hit.collider.gameObject.SetActive(false);
-                    collectable = true;
-                }
-                else if (hit.collider.CompareTag("Obstacle"))
-                {
-                    if (collectable || knowledgeManager.HasEnoughKnowledge(requiredKnowledge))
+            
+             if (Input.GetMouseButtonDown(0))
                     {
-                        hit.collider.gameObject.SetActive(false);
+                        mouseScreenPos = Input.mousePosition;
+                        mouseWorldPos = mainCam.ScreenToWorldPoint(mouseScreenPos);
+                        hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
+            
+                        if (hit.collider != null)
+                        {
+                            if (hit.collider.CompareTag("Background"))
+                            {
+                                targetPos = mouseWorldPos;
+                                isMoving = true;
+                                CheckSpriteFlip();
+                            }
+                            else if (hit.collider.CompareTag("Collectable"))
+                            {
+                                hit.collider.gameObject.SetActive(false);
+                                collectable = true;
+                            }
+                            else if (hit.collider.CompareTag("Obstacle"))
+                            {
+                                if (collectable || knowledgeManager.HasEnoughKnowledge(requiredKnowledge))
+                                {
+                                    hit.collider.gameObject.SetActive(false);
+                                }
+                                else
+                                {
+                                    Debug.Log("Not enough knowledge to pass through the obstacle.");
+                                    // You may want to add some feedback to the player (e.g., display a message)
+                                }
+                            }
+                            else if (hit.collider.CompareTag("Quiz"))
+                            {
+                                if (knowledgeManager.HasEnoughKnowledge(requiredKnowledge))
+                                {
+                                    hit.collider.gameObject.SetActive(false);
+                                }
+                                else
+                                {
+                                    Debug.Log("Not enough knowledge to pass through the obstacle.");
+                                    // You may want to add some feedback to the player (e.g., display a message)
+                                }
+                            }
+                        }
                     }
-                    else
-                    {
-                        Debug.Log("Not enough knowledge to pass through the obstacle.");
-                        // You may want to add some feedback to the player (e.g., display a message)
-                    }
-                }
-                else if (hit.collider.CompareTag("Quiz"))
-                {
-                    if (knowledgeManager.HasEnoughKnowledge(requiredKnowledge))
-                    {
-                        hit.collider.gameObject.SetActive(false);
-                    }
-                    else
-                    {
-                        Debug.Log("Not enough knowledge to pass through the obstacle.");
-                        // You may want to add some feedback to the player (e.g., display a message)
-                    }
-                }
-            }
         }
+       
     }
 
 

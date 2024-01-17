@@ -11,6 +11,7 @@ public class EmptySlot : MonoBehaviour, IDropHandler
     public int knowledgePoints = 5;
 
     public KnowledgeManager knowledgeManager;
+    
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -29,17 +30,19 @@ public class EmptySlot : MonoBehaviour, IDropHandler
                 {
                     draggedRectTransform.anchoredPosition = emptySlotRectTransform.anchoredPosition;
                     knowledgeManager.ObjectDroppedCorrectly();
-                   
+                    eventData.pointerDrag.GetComponent<DragDrop>().SetPlacedCorrectly(true);
+            
                 }
                 else
                 {
                     
-                    eventData.pointerDrag.GetComponent<DragDrop>().ResetPosition();
+                    eventData.pointerDrag.GetComponent<DragDrop>().ResetPosition();knowledgeManager.ObjectDroppedIncorrectly();
                 }
             }
             else
             {
                 eventData.pointerDrag.GetComponent<DragDrop>().ResetPosition();
+                knowledgeManager.ObjectDroppedIncorrectly();
             }
         }
     }

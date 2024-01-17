@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\KeyboardInputManagerDoor.cs" />
      <Compile Include="Assets\DialogueTrigger.cs" />
      <Compile Include="Assets\NumberInput.cs" />
      <Compile Include="Assets\KnowledgeManager.cs" />
@@ -48,9 +49,11 @@
      <Compile Include="Assets\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\Playermovement.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\SceneTransition.cs" />
+     <Compile Include="Assets\DialogueTrigger2.cs" />
      <Compile Include="Assets\Scripts\QuitGame.cs" />
      <Compile Include="Assets\IntroductionSceneManager.cs" />
      <Compile Include="Assets\Scripts\LineTest.cs" />
+     <Compile Include="Assets\DialogueManager2.cs" />
      <Compile Include="Assets\Scripts\EmptySlot.cs" />
      <Compile Include="Assets\Scripts\ClickManager.cs" />
      <Compile Include="Assets\KeyboardInputManager.cs" />
@@ -63,9 +66,11 @@
      <Compile Include="Assets\Scripts\DraggableObject.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Gradient.cs" />
      <Compile Include="Assets\Scripts\CameraZoom.cs" />
+     <Compile Include="Assets\PlayerInteractionManager.cs" />
      <Compile Include="Assets\Inventory.cs" />
      <Compile Include="Assets\Scripts\LineRendererManager.cs" />
      <Compile Include="Assets\MapRevealManager.cs" />
+     <Compile Include="Assets\InitialDialogueTrigger.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\SpriteSwapper.cs" />
      <Compile Include="Assets\Scripts\SpriteAnimator.cs" />
      <Compile Include="Assets\Scripts\ItemData.cs" />
@@ -75,8 +80,11 @@
      <Compile Include="Assets\ButtonClickHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerIdleState.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Tooltip.cs" />
+     <Compile Include="Assets\Slot.cs" />
      <Compile Include="Assets\Scripts\DefinitionButtons.cs" />
+     <Compile Include="Assets\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\authManager.cs" />
+     <Compile Include="Assets\FeedbackForm.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Popup.cs" />
      <Compile Include="Assets\Scripts\AnimationData.cs" />
      <Compile Include="Assets\Pickup.cs" />
@@ -91,9 +99,11 @@
      <Compile Include="Assets\Scripts\NameTags.cs" />
      <Compile Include="Assets\ContactForm.cs" />
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
+     <Compile Include="Assets\SceneMusicFade.cs" />
      <Compile Include="Assets\IntroManager.cs" />
      <Compile Include="Assets\Scripts\QuizManager.cs" />
      <Compile Include="Assets\UploadData.cs" />
+     <Compile Include="Assets\MessageDisplay.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Sprites\changelog.txt" />

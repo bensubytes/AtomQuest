@@ -9,7 +9,8 @@ public class Pickup : MonoBehaviour
 {
 
     private Inventory inventory;
-    public GameObject itemButton;
+    public GameObject itemButtonPrefab;
+
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -19,14 +20,19 @@ public class Pickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            for (int i = 0; i < inventory.slots.Length; i++)
+            // Check if the collided object has a DragDrop script and it is not being dragged before allowing pickup
+            DragDrop dragDrop = itemButtonPrefab.GetComponent<DragDrop>();
+            if (dragDrop != null && !dragDrop.IsDragging())
             {
-                if (inventory.isFull[i] == false)
+                for (int i = 0; i < inventory.slots.Length; i++)
                 {
-                    inventory.isFull[i] = true;
-                    Instantiate(itemButton, inventory.slots[i].transform, false);
-                    Destroy(gameObject);
-                    break;
+                    if (inventory.isFull[i] == false)
+                    {
+                        inventory.isFull[i] = true;
+                        Instantiate(itemButtonPrefab, inventory.slots[i].transform, false);
+                        Destroy(gameObject);
+                        break;
+                    }
                 }
             }
         }

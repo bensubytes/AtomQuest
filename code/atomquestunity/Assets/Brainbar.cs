@@ -7,7 +7,9 @@ public class Brainbar : MonoBehaviour
     public Slider slider;
     public float animationDuration = 0.5f;
 
-    private int currentKnowledge = 0;
+    public int maxKnowledge = 100;
+    public int currentKnowledge = 0;
+    public int knowledgePointsPerLevel = 9;
 
     private static Brainbar instance;
 
@@ -17,10 +19,6 @@ public class Brainbar : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 

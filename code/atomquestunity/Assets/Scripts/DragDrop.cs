@@ -6,25 +6,47 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    public Canvas canvas;
+    private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     public int id;
     private Vector2 initPos;
+    private bool isDragging = false;
+    private bool placedCorrectly = false;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         initPos = transform.position;
+        
+        GameObject canvasObject = GameObject.FindWithTag("AtomCanvas");
+
+        if (canvasObject != null)
+        {
+            canvas = canvasObject.GetComponent<Canvas>();
+        }
+        else
+        {
+            Debug.LogError("Canvas with tag 'AtomCanvas' not found in the scene.");
+        }
     }
 
+    public void SetPlacedCorrectly(bool value)
+    {
+        placedCorrectly = value;
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("OnBeginDrag");
-        canvasGroup.alpha = 0.6f;
-        canvasGroup.blocksRaycasts = false;
+        if (!placedCorrectly)
+        {
+            isDragging = true; 
+            canvasGroup.alpha = 0.6f;
+            canvasGroup.blocksRaycasts = false;
+        }
     }
+
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -45,9 +67,13 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     
     public void OnPointerDown(PointerEventData eventData)
     {
-       Debug.Log("OnPointerDown");
+        Debug.Log("OnPointerDown");
     }
 
+    public bool IsDragging()
+    {
+        return isDragging;
+    }
     public void ResetPosition()
     {
         transform.position = initPos;

@@ -9,12 +9,13 @@ public class DialogueTrigger : MonoBehaviour
 
     void Start()
     {
-        
+        Debug.Log("DialogueTrigger.Start()");
         TriggerDialogue();
     }
 
     public void TriggerDialogue()
     {
+        Debug.Log("DialogueTrigger.TriggerDialogue()");
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 }

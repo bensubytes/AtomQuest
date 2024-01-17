@@ -1,8 +1,9 @@
-using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+
 public class UploadData : MonoBehaviour
 {
     private string googleSheetDocUD;
@@ -18,6 +19,10 @@ public class UploadData : MonoBehaviour
     public ToggleGroup toggleGroup8;
     public ToggleGroup toggleGroup9;
     public ToggleGroup toggleGroup10;
+    public ToggleGroup toggleGroup11;
+
+    public TMP_InputField ageInput;
+    public TMP_InputField majorInput;
 
     private int[] toggleValues;
 
@@ -27,6 +32,7 @@ public class UploadData : MonoBehaviour
         "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf_169Qtmd3uZxlIX_AM-kdZjAqnrqiUsEuH74XQBNUQpE5Cw/formResponse";
 
     private string[] googleFormOptions = { "False", "True" };
+    private string[] googleFormOptionsQ11 = { "No", "Sometimes", "Often" };
 
     private string[] entryIDs =
     {
@@ -40,6 +46,10 @@ public class UploadData : MonoBehaviour
         "entry.678762217",
         "entry.945203479",
         "entry.779661951",
+        "entry.847834694", //q11
+        "entry.1522402797", //age
+        "entry.1060265220", //major
+        
     };
 
     void Start()
@@ -52,7 +62,7 @@ public class UploadData : MonoBehaviour
     }
 
 
-    void OnToggleValueChanged(int index)
+    public void OnToggleValueChanged(int index)
     {
         Toggle[] toggles = GetToggles(index);
         int selectedOption = -1; 
@@ -98,9 +108,10 @@ public class UploadData : MonoBehaviour
                 return toggleGroup9.GetComponentsInChildren<Toggle>();
             case 9:
                 return toggleGroup10.GetComponentsInChildren<Toggle>();
-           
+            case 10:
+                return toggleGroup11.GetComponentsInChildren<Toggle>();
 
-            
+
             default:
                 return null;
         }
@@ -120,10 +131,22 @@ public class UploadData : MonoBehaviour
        
         if (allTogglesChanged)
         {
-            for (int i = 0; i < toggleValues.Length; i++)
+            StartCoroutine(UploadUserData(entryIDs[11], ageInput.text));
+             StartCoroutine(UploadUserData(entryIDs[12], majorInput.text));
+            
+            for (int i = 0; i < toggleValues.Length-2; i++)
             {
-                StartCoroutine(UploadUserData(entryIDs[i], googleFormOptions[toggleValues[i]]));
+                if (i == 10)
+                {
+                    string optionForQ11 = (toggleValues[i] == 2) ? "Often" : googleFormOptionsQ11[toggleValues[i]];
+                    StartCoroutine(UploadUserData(entryIDs[i], optionForQ11));
+                }
+                else
+                {
+                    StartCoroutine(UploadUserData(entryIDs[i], googleFormOptions[toggleValues[i]]));
+                }
             }
+
 
             
             submitButton.interactable = false;
