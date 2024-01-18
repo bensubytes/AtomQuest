@@ -8,7 +8,9 @@ public class UploadData : MonoBehaviour
 {
     private string googleSheetDocUD;
     private string url;
-
+    public int correctCount = 0; 
+    private bool isCorrect;
+    
     public ToggleGroup toggleGroup1;
     public ToggleGroup toggleGroup2;
     public ToggleGroup toggleGroup3;
@@ -24,7 +26,7 @@ public class UploadData : MonoBehaviour
     public TMP_InputField ageInput;
     public TMP_InputField majorInput;
 
-    private int[] toggleValues;
+    public int[] toggleValues;
 
     public Button submitButton;
 
@@ -138,11 +140,12 @@ public class UploadData : MonoBehaviour
             {
                 if (i == 10)
                 {
+                    
                     string optionForQ11 = (toggleValues[i] == 2) ? "Often" : googleFormOptionsQ11[toggleValues[i]];
                     StartCoroutine(UploadUserData(entryIDs[i], optionForQ11));
                 }
                 else
-                {
+                {    isCorrect = (googleFormOptions[toggleValues[i]] == GetCorrectAnswerForQuestion(i));
                     StartCoroutine(UploadUserData(entryIDs[i], googleFormOptions[toggleValues[i]]));
                 }
             }
@@ -156,6 +159,9 @@ public class UploadData : MonoBehaviour
         {
             Debug.Log("Please select one option for each question before submitting.");
         }
+        
+        PlayerPrefs.SetInt("CorrectCountQuiz1", correctCount);
+        PlayerPrefs.Save();
     }
 
     IEnumerator UploadUserData(string entryID, string value)
@@ -174,9 +180,21 @@ public class UploadData : MonoBehaviour
         else
         {
             Debug.Log("Form upload complete!");
+
+            // Increment correct count if the answer is correct
+            if (isCorrect)
+            {
+                correctCount++;
+            }
+        }
             
         }
+    
+    string GetCorrectAnswerForQuestion(int questionIndex)
+    {
+        // Replace this with the actual correct answers for each question
+        string[] correctAnswers = { "False", "True", "True", "False", "True", "True", "False", "True", "True", "False" };
+        return correctAnswers[questionIndex];
     }
-
     
 }

@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\Questions.cs" />
      <Compile Include="Assets\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\Playermovement.cs" />
+     <Compile Include="Assets\LevelTimer.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\SceneTransition.cs" />
      <Compile Include="Assets\DialogueTrigger2.cs" />
      <Compile Include="Assets\Scripts\QuitGame.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Scripts\CameraZoom.cs" />
      <Compile Include="Assets\PlayerInteractionManager.cs" />
      <Compile Include="Assets\Inventory.cs" />
+     <Compile Include="Assets\MessageDisplay.cs" />
      <Compile Include="Assets\Scripts\LineRendererManager.cs" />
      <Compile Include="Assets\MapRevealManager.cs" />
      <Compile Include="Assets\InitialDialogueTrigger.cs" />
@@ -103,7 +105,7 @@
      <Compile Include="Assets\IntroManager.cs" />
      <Compile Include="Assets\Scripts\QuizManager.cs" />
      <Compile Include="Assets\UploadData.cs" />
-     <Compile Include="Assets\MessageDisplay.cs" />
+     <Compile Include="Assets\QuizResults.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Sprites\changelog.txt" />

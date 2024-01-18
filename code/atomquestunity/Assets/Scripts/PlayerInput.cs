@@ -18,6 +18,7 @@ public class PlayerInput : MonoBehaviour
     
     private RaycastHit2D hit;
     
+    
     void Update()
     {
         if (Camera.main != null)
@@ -41,6 +42,7 @@ public class PlayerInput : MonoBehaviour
                             {
                                 hit.collider.gameObject.SetActive(false);
                                 collectable = true;
+                                knowledgeManager.FeedbackAudio(knowledgeManager.rightClip);
                             }
                             else if (hit.collider.CompareTag("Obstacle"))
                             {
@@ -51,7 +53,7 @@ public class PlayerInput : MonoBehaviour
                                 else
                                 {
                                     Debug.Log("Not enough knowledge to pass through the obstacle.");
-                                    // You may want to add some feedback to the player (e.g., display a message)
+                               
                                 }
                             }
                             else if (hit.collider.CompareTag("Quiz"))
@@ -63,11 +65,15 @@ public class PlayerInput : MonoBehaviour
                                 else
                                 {
                                     Debug.Log("Not enough knowledge to pass through the obstacle.");
-                                    // You may want to add some feedback to the player (e.g., display a message)
+                                    
                                 }
                             }
                         }
                     }
+             /*if (levelTimer != null && levelTimer.currentTime <= 0)
+             {
+                 knowledgeManager.ResetKnowledge();
+             }*/
         }
        
     }
@@ -81,21 +87,21 @@ public class PlayerInput : MonoBehaviour
         {
             Vector3 newPosition = Vector3.MoveTowards(player.transform.position, targetPos, speed);
 
-            // Check if the new position collides with an obstacle
+            
             Collider2D obstacleCollider = Physics2D.OverlapCircle(newPosition, player.GetComponent<Collider2D>().bounds.size.x / 2, LayerMask.GetMask("Obstacle"));
         
             if (obstacleCollider == null)
             {
-                // No obstacle, move the player
+            
                 player.transform.position = newPosition;
             }
             else
             {
-                // Obstacle encountered, stop moving
+                
                 isMoving = false;
             }
 
-            // Check if the player has reached the target position using Vector2.Equals
+           
             if (Vector2.Equals(new Vector2(player.transform.position.x, player.transform.position.y), targetPos))
             {
                 isMoving = false;

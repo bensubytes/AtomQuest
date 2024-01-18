@@ -2152,11 +2152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6104691568908232673, guid: b57af51a9ff0b4adb82b1e6575a3b280, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 262.66
+      value: 263.44
       objectReference: {fileID: 0}
     - target: {fileID: 6104691568908232673, guid: b57af51a9ff0b4adb82b1e6575a3b280, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 426.55
+      value: 397.87
       objectReference: {fileID: 0}
     - target: {fileID: 6104691568908232673, guid: b57af51a9ff0b4adb82b1e6575a3b280, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3647,7 +3647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -1290}
+  m_AnchoredPosition: {x: -5, y: -1310}
   m_SizeDelta: {x: 0, y: 3304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679636527
@@ -6149,6 +6149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a878db23292b9428a20ea5159532b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctCount: 0
   toggleGroup1: {fileID: 1877686107}
   toggleGroup2: {fileID: 680392577}
   toggleGroup3: {fileID: 636418411}
@@ -6162,6 +6163,7 @@ MonoBehaviour:
   toggleGroup11: {fileID: 175478360}
   ageInput: {fileID: 599935039}
   majorInput: {fileID: 1932143064}
+  toggleValues: 
   submitButton: {fileID: 1792715295}
 --- !u!4 &1203255464
 Transform:
@@ -7468,8 +7470,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_text
-      value: "Elements differ according to how many\n protons their atoms contains.
-        \nThis value is called atomic number Z"
+      value: "Elements differ according to how many\n protons their atoms contain.\nThis
+        value is called atomic number Z"
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment

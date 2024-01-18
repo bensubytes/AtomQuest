@@ -7,6 +7,8 @@ public class UploadDataFinalQuiz : MonoBehaviour
 {
     private string googleSheetDocUD;
     private string url;
+    public int correctCount = 0;
+    private bool isCorrect;
 
     public ToggleGroup toggleGroup1;
     public ToggleGroup toggleGroup2;
@@ -19,7 +21,7 @@ public class UploadDataFinalQuiz : MonoBehaviour
     public ToggleGroup toggleGroup9;
     public ToggleGroup toggleGroup10;
 
-    private int[] toggleValues;
+    public int[] toggleValues;
 
     public Button submitButton;
 
@@ -121,6 +123,7 @@ public class UploadDataFinalQuiz : MonoBehaviour
         {
             for (int i = 0; i < toggleValues.Length; i++)
             {
+                bool isCorrect = (googleFormOptions[toggleValues[i]] == GetCorrectAnswerForQuestion(i));
                 StartCoroutine(UploadUserData(entryIDs[i], googleFormOptions[toggleValues[i]]));
             }
             submitButton.interactable = false;
@@ -129,6 +132,9 @@ public class UploadDataFinalQuiz : MonoBehaviour
         {
             Debug.Log("Please select one option for each question before submitting.");
         }
+        
+        PlayerPrefs.SetInt("CorrectCountQuiz2", correctCount);
+        PlayerPrefs.Save();
     }
 
     IEnumerator UploadUserData(string entryID, string value)
@@ -147,9 +153,19 @@ public class UploadDataFinalQuiz : MonoBehaviour
         else
         {
             Debug.Log("Form upload complete!");
+            if (isCorrect)
+            {
+                correctCount++;
+            }
 
         }
     }
-
+    
+    string GetCorrectAnswerForQuestion(int questionIndex)
+    {
+        // Replace this with the actual correct answers for each question
+        string[] correctAnswers = { "False", "True", "True", "False", "True", "True", "False", "True", "True", "False" };
+        return correctAnswers[questionIndex];
+    }
 
 }

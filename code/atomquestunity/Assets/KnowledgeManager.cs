@@ -6,16 +6,22 @@ using UnityEngine;
 public class KnowledgeManager : MonoBehaviour
 {
     public int maxKnowledge = 100;
+    private int initialKnowledge;
     private Brainbar brainbar;
     public bool deductPointsEnabled = true;
     public MessageDisplay messageDisplay;
     public string wrongPlacementMessage = "-1 Knowledge";
+    public AudioClip wrongClip;
+    public AudioClip rightClip;
+    private AudioSource audioSource;
     
     void Start()
     {
-        // Find the Brainbar component in the scene
+   
         brainbar = GameObject.FindObjectOfType<Brainbar>();
-
+        initialKnowledge = GetCurrentKnowledge();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.volume = 0.3f;
         if (brainbar == null)
         {
             Debug.LogError("Brainbar not found in the scene!");
@@ -61,6 +67,7 @@ public class KnowledgeManager : MonoBehaviour
     public void ObjectDroppedCorrectly()
     {
         AdjustKnowledge(3);
+        FeedbackAudio(rightClip);
         Debug.Log("Adjusting");
         Debug.Log(GetCurrentKnowledge());
     }
@@ -70,6 +77,7 @@ public class KnowledgeManager : MonoBehaviour
         if (deductPointsEnabled)
         {
             AdjustKnowledge(-1);
+            FeedbackAudio(wrongClip);
             messageDisplay.DisplayMessage(wrongPlacementMessage);
             Debug.Log("Deductingpoints");
         }
@@ -88,14 +96,34 @@ public class KnowledgeManager : MonoBehaviour
         SetCurrentKnowledge(loadedKnowledge);
     }
 
-    private void SetCurrentKnowledge(int knowledge)
+    public void SetCurrentKnowledge(int knowledge)
     {
         PlayerPrefs.SetInt("KnowledgePoints", knowledge);
         PlayerPrefs.Save();
     }
 
+    public void ResetKnowledge()
+    {
+        int currentKnowledge = GetCurrentKnowledge();
+        int knowledgeCollectedInLevel = currentKnowledge - initialKnowledge;
+
+        
+        currentKnowledge -= knowledgeCollectedInLevel;
+        
+        currentKnowledge = Mathf.Max(currentKnowledge, 0);
+
+        SetCurrentKnowledge(currentKnowledge);
+    }
+    
     private int GetCurrentKnowledge()
     {
         return PlayerPrefs.GetInt("KnowledgePoints", 0);
     }
+
+    public void FeedbackAudio(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
+    
 }

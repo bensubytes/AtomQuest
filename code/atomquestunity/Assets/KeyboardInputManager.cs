@@ -26,10 +26,13 @@ public class KeyboardInputManager : MonoBehaviour
             resultText.text = "True";
             resultText.color = Color.green;
             knowledgeManager.ObjectDroppedCorrectly();
+            knowledgeManager.FeedbackAudio(knowledgeManager.rightClip);
         }
         else
         {
             resultText.text = "False";
+            knowledgeManager.ObjectDroppedIncorrectly();
+            knowledgeManager.FeedbackAudio(knowledgeManager.wrongClip);
             resultText.color = Color.red;
         }
     }

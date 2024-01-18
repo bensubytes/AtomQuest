@@ -1188,7 +1188,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3064693981553212385, guid: 28c7de8f9a4a547f79324f7413a2358e, type: 3}
       propertyPath: m_text
-      value: Privay policy
+      value: Privacy policy
       objectReference: {fileID: 0}
     - target: {fileID: 3064693981553212385, guid: 28c7de8f9a4a547f79324f7413a2358e, type: 3}
       propertyPath: m_textInfo.lineCount

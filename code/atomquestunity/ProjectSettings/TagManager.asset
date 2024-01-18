@@ -11,6 +11,7 @@ TagManager:
   - Obstacle
   - Quiz
   - AtomCanvas
+  - TimerText
   layers:
   - Default
   - TransparentFX
