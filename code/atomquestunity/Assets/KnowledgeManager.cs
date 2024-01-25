@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class KnowledgeManager : MonoBehaviour
 {
-    public int maxKnowledge = 100;
+    public int maxKnowledge = 70;
     private int initialKnowledge;
     private Brainbar brainbar;
     public bool deductPointsEnabled = true;

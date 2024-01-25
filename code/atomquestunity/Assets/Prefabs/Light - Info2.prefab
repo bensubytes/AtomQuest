@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 1000010087709644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 4.6654105}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8893794855112515915}
@@ -1524,17 +1524,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 823409741649792979, guid: 9b32e092bf4f3421198a72cf1fb31b56, type: 3}
   m_PrefabInstance: {fileID: 1319224000348824868}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2271116219438037522 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 993733206933856054, guid: 9b32e092bf4f3421198a72cf1fb31b56, type: 3}
-  m_PrefabInstance: {fileID: 1319224000348824868}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4643007139062416238 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5918175597822813770, guid: 9b32e092bf4f3421198a72cf1fb31b56, type: 3}
@@ -2290,9 +2279,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de657a3170bc204ba1498246b56da8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 2271116219438037522}
+  inputFields: []
   resultText: {fileID: 4643007139062416238}
-  correctText: 3
+  correctTexts: []
 --- !u!224 &436457379289017604 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6950487415510060082, guid: ed62f0d4fc2b5453bbff8a0ca2732613, type: 3}

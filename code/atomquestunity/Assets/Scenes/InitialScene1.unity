@@ -624,7 +624,7 @@ PrefabInstance:
     - target: {fileID: 3370779976085393186, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d5e7ef5b365fc32439845ea92b403dc3, type: 3}
+      objectReference: {fileID: 21300000, guid: 5363ba727fc6b284abf13983450c2ebf, type: 3}
     - target: {fileID: 3370779976085393186, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -3801,6 +3801,8 @@ MonoBehaviour:
   nameText: {fileID: 1850826997}
   animator: {fileID: 1931259116}
   playerInteraction: {fileID: 505681383}
+  playerInput: {fileID: 505681384}
+  dialogueCanvasGroup: {fileID: 1931259117}
 --- !u!114 &505681383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3825,6 +3827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5efe45731006e499a221f23c081a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 0}
+  animator1: {fileID: 0}
+  animator2: {fileID: 0}
   mouseScreenPos: {x: 0, y: 0, z: 0}
   mainCam: {fileID: 1738407672}
   mouseWorldPos: {x: 0, y: 0, z: 0}
@@ -3835,6 +3840,10 @@ MonoBehaviour:
   collectable: 0
   knowledgeManager: {fileID: 0}
   requiredKnowledge: 6
+  textTMP: {fileID: 0}
+  greenLight: {fileID: 0}
+  playerAnimations: []
+  playerTransform: {fileID: 0}
 --- !u!1 &506681381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399794545690463920, guid: ab9c97b375b224a77994a5d2c334186c, type: 3}
@@ -4312,7 +4321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575920328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2978748, y: -0.6724221, z: -10.169179}
+  m_LocalPosition: {x: -1.2979274, y: -0.6724221, z: -10.169179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5857,7 +5866,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: b3511ba20d97f3a419f1a76b04c7dcbd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ae5a46c0bbb7cf45aed8d8a8bbb62c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8694,7 +8703,7 @@ PrefabInstance:
     - target: {fileID: 11427252, guid: 751f7137cfffd4a16b1a4c191e687d64, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7d30a7673c95044c5ba541d8597d4f60, type: 3}
+      objectReference: {fileID: 21300000, guid: e0310c386b09348d9a23f0797e8fbd0b, type: 3}
     - target: {fileID: 11434868, guid: 751f7137cfffd4a16b1a4c191e687d64, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -11347,7 +11356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738407670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2978748, y: -0.6724221, z: -10.169179}
+  m_LocalPosition: {x: -1.2979274, y: -0.6724221, z: -10.169179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12899,6 +12908,7 @@ GameObject:
   - component: {fileID: 1931259115}
   - component: {fileID: 1931259114}
   - component: {fileID: 1931259116}
+  - component: {fileID: 1931259117}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -12989,6 +12999,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!225 &1931259117
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931259112}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1934527686
 GameObject:
   m_ObjectHideFlags: 0
@@ -14028,6 +14050,26 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3370779976085393186, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
   m_PrefabInstance: {fileID: 85118307}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2070917797
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858691025}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0f33bf15a34e5f4996e143fbc33b1f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2076638881
 GameObject:
   m_ObjectHideFlags: 0

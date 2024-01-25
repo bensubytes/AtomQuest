@@ -63,6 +63,7 @@
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\CleanButton.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Utils.cs" />
+     <Compile Include="Assets\ToggleExtensions.cs" />
      <Compile Include="Assets\Quit.cs" />
      <Compile Include="Assets\Scripts\DraggableObject.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Gradient.cs" />
@@ -81,6 +82,7 @@
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Transition.cs" />
      <Compile Include="Assets\ButtonClickHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerIdleState.cs" />
+     <Compile Include="Assets\InputFieldController.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Tooltip.cs" />
      <Compile Include="Assets\Slot.cs" />
      <Compile Include="Assets\Scripts\DefinitionButtons.cs" />
@@ -95,6 +97,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Brainbar.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\CleanButtonConfig.cs" />
+     <Compile Include="Assets\QuizResults.cs" />
      <Compile Include="Assets\Scripts\DragDrop.cs" />
      <Compile Include="Assets\Scripts\GotoSceneButton.cs" />
      <Compile Include="Assets\Scripts\Buttons.cs" />
@@ -105,7 +108,6 @@
      <Compile Include="Assets\IntroManager.cs" />
      <Compile Include="Assets\Scripts\QuizManager.cs" />
      <Compile Include="Assets\UploadData.cs" />
-     <Compile Include="Assets\QuizResults.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Sprites\changelog.txt" />

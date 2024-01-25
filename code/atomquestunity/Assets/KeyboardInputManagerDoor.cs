@@ -18,6 +18,10 @@ public class KeyboardInputManagerDoor : MonoBehaviour
         knowledgeManager = FindObjectOfType<KnowledgeManager>();
     }
 
+    public void OpenKeyboard()
+    {
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.NumberPad);
+    }
     public void ValidateInput()
     {
         string input = inputField.text.Trim();

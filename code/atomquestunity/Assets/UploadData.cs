@@ -8,9 +8,10 @@ public class UploadData : MonoBehaviour
 {
     private string googleSheetDocUD;
     private string url;
-    public int correctCount = 0; 
-    private bool isCorrect;
-    
+    public int correctCount = 0;
+    public AudioClip toggleSoundEffect;
+    private AudioSource audioSource;
+    private bool[] questionsAnswered;
     public ToggleGroup toggleGroup1;
     public ToggleGroup toggleGroup2;
     public ToggleGroup toggleGroup3;
@@ -29,6 +30,7 @@ public class UploadData : MonoBehaviour
     public int[] toggleValues;
 
     public Button submitButton;
+    public Slider progressBar;
 
     private string URL =
         "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf_169Qtmd3uZxlIX_AM-kdZjAqnrqiUsEuH74XQBNUQpE5Cw/formResponse";
@@ -57,17 +59,22 @@ public class UploadData : MonoBehaviour
     void Start()
     {
         toggleValues = new int[entryIDs.Length];
-
-
         submitButton.onClick.AddListener(Submit);
-
+        audioSource = GetComponent<AudioSource>();
+        questionsAnswered = new bool[entryIDs.Length];
     }
 
+    
+    public void OnInputValueChanged(TMP_InputField inputField)
+    {
+        progressBar.value++;
+        PlayToggleSoundEffect();
+    }
 
     public void OnToggleValueChanged(int index)
     {
         Toggle[] toggles = GetToggles(index);
-        int selectedOption = -1; 
+        int selectedOption = -1;
 
         for (int i = 0; i < toggles.Length; i++)
         {
@@ -78,13 +85,21 @@ public class UploadData : MonoBehaviour
             }
         }
 
-        if (selectedOption == -1)
+        if (selectedOption == -1 && questionsAnswered[index])
         {
-            
-            toggleValues[index] = -1;
+            // If the question was previously answered, update the progress bar
+            progressBar.value -= 1;
+            questionsAnswered[index] = false;
+        }
+        else if (selectedOption != -1 && !questionsAnswered[index])
+        {
+            // If the question was not previously answered, update the progress bar
+            progressBar.value += 1;
+            questionsAnswered[index] = true;
+            PlayToggleSoundEffect();
         }
     }
-
+    
     
     Toggle[] GetToggles(int index)
     {
@@ -118,83 +133,111 @@ public class UploadData : MonoBehaviour
                 return null;
         }
     }
+    // ... (existing code)
+
     void Submit()
     {
         bool allTogglesChanged = true;
-        for (int i = 0; i < toggleValues.Length; i++)
+        correctCount = 0; // Reset correct count before checking the answers
+
+        for (int i = 0; i < toggleValues.Length - 2; i++)
         {
-            if (toggleValues[i] == -1) 
+            if (toggleValues[i] == -1)
             {
                 allTogglesChanged = false;
                 break;
             }
         }
 
-       
         if (allTogglesChanged)
         {
-            StartCoroutine(UploadUserData(entryIDs[11], ageInput.text));
-             StartCoroutine(UploadUserData(entryIDs[12], majorInput.text));
-            
-            for (int i = 0; i < toggleValues.Length-2; i++)
+            StartCoroutine(UploadUserData1(entryIDs[11], ageInput.text));
+            StartCoroutine(UploadUserData1(entryIDs[12], majorInput.text));
+
+            for (int i = 0; i < toggleValues.Length - 2; i++)
             {
                 if (i == 10)
                 {
-                    
                     string optionForQ11 = (toggleValues[i] == 2) ? "Often" : googleFormOptionsQ11[toggleValues[i]];
-                    StartCoroutine(UploadUserData(entryIDs[i], optionForQ11));
+                    StartCoroutine(UploadUserData1(entryIDs[i], optionForQ11));
                 }
                 else
-                {    isCorrect = (googleFormOptions[toggleValues[i]] == GetCorrectAnswerForQuestion(i));
-                    StartCoroutine(UploadUserData(entryIDs[i], googleFormOptions[toggleValues[i]]));
+                {
+                    string selectedOption = googleFormOptions[toggleValues[i]];
+                    string correctAnswer = GetCorrectAnswerForQuestion(i);
+                    bool isCorrect = (selectedOption == correctAnswer);
+                    StartCoroutine(UploadUserData(entryIDs[i], isCorrect));
+
+                    if (isCorrect)
+                    {
+                        correctCount++;
+                    }
                 }
+
+                PlayerPrefs.SetInt("CorrectCountQuiz1", correctCount);
+                PlayerPrefs.Save();
+                Debug.Log(correctCount);
             }
-
-
-            
-            submitButton.interactable = false;
-           
         }
-        else
-        {
-            Debug.Log("Please select one option for each question before submitting.");
-        }
-        
-        PlayerPrefs.SetInt("CorrectCountQuiz1", correctCount);
-        PlayerPrefs.Save();
     }
 
-    IEnumerator UploadUserData(string entryID, string value)
-    {
+
+    IEnumerator UploadUserData1(string entryID, string value)
+    { 
         WWWForm form = new WWWForm();
         form.AddField(entryID, value);
 
-        using UnityWebRequest www = UnityWebRequest.Post(URL, form);
-
-        yield return www.SendWebRequest();
-
-        if (www.result != UnityWebRequest.Result.Success)
+        using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
         {
-            Debug.LogError(www.error);
-        }
-        else
-        {
-            Debug.Log("Form upload complete!");
+            yield return www.SendWebRequest();
 
-            // Increment correct count if the answer is correct
-            if (isCorrect)
+            if (www.result != UnityWebRequest.Result.Success)
             {
-                correctCount++;
+                Debug.LogError(www.error);
+            }
+            else
+            {
+                Debug.Log("Form upload complete!");
+
             }
         }
-            
+    }
+
+    IEnumerator UploadUserData(string entryID, bool isCorrect)
+    {
+        string value = isCorrect ? "True" : "False";
+        WWWForm form = new WWWForm();
+        form.AddField(entryID, value);
+
+        using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError(www.error);
+            }
+            else
+            {
+                Debug.Log("Form upload complete!");
+            }
         }
+    }
+    
     
     string GetCorrectAnswerForQuestion(int questionIndex)
     {
         // Replace this with the actual correct answers for each question
         string[] correctAnswers = { "False", "True", "True", "False", "True", "True", "False", "True", "True", "False" };
         return correctAnswers[questionIndex];
+    }
+    
+    void PlayToggleSoundEffect()
+    {
+        if (toggleSoundEffect != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(toggleSoundEffect);
+        }
     }
     
 }

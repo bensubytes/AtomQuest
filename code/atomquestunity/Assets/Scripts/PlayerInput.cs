@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerInput : MonoBehaviour
 {
+    public GameObject effect;
+    public Animator animator1;
+    public Animator animator2;
     public Vector3 mouseScreenPos;
     public Camera mainCam;
     public Vector3 mouseWorldPos;
@@ -15,13 +20,22 @@ public class PlayerInput : MonoBehaviour
     public bool collectable = false;
     public KnowledgeManager knowledgeManager;
     public float requiredKnowledge = 6f;
-    
+    private bool canMove = true;
     private RaycastHit2D hit;
-    
-    
+    public TextMeshProUGUI textTMP;
+    public Image greenLight;
+    public AnimationData[] playerAnimations;
+    public Transform playerTransform;
+    public void SetCanMove(bool move)
+    {
+        canMove = move;
+    }
+
+   
+
     void Update()
     {
-        if (Camera.main != null)
+        if (canMove && Camera.main != null)
         {
             
              if (Input.GetMouseButtonDown(0))
@@ -29,7 +43,7 @@ public class PlayerInput : MonoBehaviour
                         mouseScreenPos = Input.mousePosition;
                         mouseWorldPos = mainCam.ScreenToWorldPoint(mouseScreenPos);
                         hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-            
+
                         if (hit.collider != null)
                         {
                             if (hit.collider.CompareTag("Background"))
@@ -48,7 +62,8 @@ public class PlayerInput : MonoBehaviour
                             {
                                 if (collectable || knowledgeManager.HasEnoughKnowledge(requiredKnowledge))
                                 {
-                                    hit.collider.gameObject.SetActive(false);
+                                    BoxCollider2D boxCollider2D = hit.collider.GetComponent<BoxCollider2D>();
+                                    boxCollider2D.enabled = false;
                                 }
                                 else
                                 {
@@ -60,7 +75,17 @@ public class PlayerInput : MonoBehaviour
                             {
                                 if (knowledgeManager.HasEnoughKnowledge(requiredKnowledge))
                                 {
-                                    hit.collider.gameObject.SetActive(false);
+                                    BoxCollider2D boxCollider2D = hit.collider.GetComponent<BoxCollider2D>();
+                                    boxCollider2D.enabled = false;
+                                    if (textTMP != null)
+                                    {
+                                        textTMP.gameObject.SetActive(false);
+                                    }
+                                    
+                                    if (greenLight != null)
+                                    {
+                                        greenLight.gameObject.SetActive(true);
+                                    }
                                 }
                                 else
                                 {
@@ -85,9 +110,9 @@ public class PlayerInput : MonoBehaviour
     {
         if (isMoving)
         {
+
             Vector3 newPosition = Vector3.MoveTowards(player.transform.position, targetPos, speed);
 
-            
             Collider2D obstacleCollider = Physics2D.OverlapCircle(newPosition, player.GetComponent<Collider2D>().bounds.size.x / 2, LayerMask.GetMask("Obstacle"));
         
             if (obstacleCollider == null)

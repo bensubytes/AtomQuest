@@ -1,15 +1,18 @@
-using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+
 public class UploadDataFinalQuiz : MonoBehaviour
 {
     private string googleSheetDocUD;
     private string url;
     public int correctCount = 0;
-    private bool isCorrect;
-
+    public AudioClip toggleSoundEffect;
+    private AudioSource audioSource;
+    private bool[] questionsAnswered;
+    
     public ToggleGroup toggleGroup1;
     public ToggleGroup toggleGroup2;
     public ToggleGroup toggleGroup3;
@@ -20,9 +23,12 @@ public class UploadDataFinalQuiz : MonoBehaviour
     public ToggleGroup toggleGroup8;
     public ToggleGroup toggleGroup9;
     public ToggleGroup toggleGroup10;
-
+    
+    
+    
     public int[] toggleValues;
-
+    public Slider progressBar;
+    
     public Button submitButton;
 
     private string URL =
@@ -48,8 +54,9 @@ public class UploadDataFinalQuiz : MonoBehaviour
     {
         toggleValues = new int[entryIDs.Length];
 
-
+        audioSource = GetComponent<AudioSource>();
         submitButton.onClick.AddListener(Submit);
+        questionsAnswered = new bool[entryIDs.Length];
 
     }
 
@@ -68,13 +75,20 @@ public class UploadDataFinalQuiz : MonoBehaviour
             }
         }
 
-        if (selectedOption == -1)
+        if (selectedOption == -1 && questionsAnswered[index])
         {
-
-            toggleValues[index] = -1;
+            // If the question was previously answered, update the progress bar
+            progressBar.value -= 1;
+            questionsAnswered[index] = false;
+        }
+        else if (selectedOption != -1 && !questionsAnswered[index])
+        {
+            // If the question was not previously answered, update the progress bar
+            progressBar.value += 1;
+            questionsAnswered[index] = true;
+            PlayToggleSoundEffect();
         }
     }
-
 
     Toggle[] GetToggles(int index)
     {
@@ -107,9 +121,13 @@ public class UploadDataFinalQuiz : MonoBehaviour
                 return null;
         }
     }
+    
+
     void Submit()
     {
         bool allTogglesChanged = true;
+        correctCount = 0;
+
         for (int i = 0; i < toggleValues.Length; i++)
         {
             if (toggleValues[i] == -1)
@@ -117,55 +135,74 @@ public class UploadDataFinalQuiz : MonoBehaviour
                 allTogglesChanged = false;
                 break;
             }
+
+            string selectedOption = googleFormOptions[toggleValues[i]];
+            string correctAnswer = GetCorrectAnswerForQuestion(i);
+
+          
+            bool isCorrect = (selectedOption == correctAnswer);
+
+            StartCoroutine(UploadUserData(entryIDs[i], isCorrect));
+
+        
+            if (isCorrect)
+            {
+                correctCount++;
+            }
         }
 
         if (allTogglesChanged)
         {
-            for (int i = 0; i < toggleValues.Length; i++)
-            {
-                bool isCorrect = (googleFormOptions[toggleValues[i]] == GetCorrectAnswerForQuestion(i));
-                StartCoroutine(UploadUserData(entryIDs[i], googleFormOptions[toggleValues[i]]));
-            }
             submitButton.interactable = false;
+
+           
+            PlayerPrefs.SetInt("CorrectCountQuiz2", correctCount);
+            PlayerPrefs.Save();
         }
         else
         {
             Debug.Log("Please select one option for each question before submitting.");
         }
-        
-        PlayerPrefs.SetInt("CorrectCountQuiz2", correctCount);
-        PlayerPrefs.Save();
     }
 
-    IEnumerator UploadUserData(string entryID, string value)
+    
+
+    IEnumerator UploadUserData(string entryID, bool isCorrect)
     {
+       
+        string value = isCorrect ? "True" : "False";
+
         WWWForm form = new WWWForm();
         form.AddField(entryID, value);
 
-        using UnityWebRequest www = UnityWebRequest.Post(URL, form);
-
-        yield return www.SendWebRequest();
-
-        if (www.result != UnityWebRequest.Result.Success)
+        using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
         {
-            Debug.LogError(www.error);
-        }
-        else
-        {
-            Debug.Log("Form upload complete!");
-            if (isCorrect)
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
             {
-                correctCount++;
+                Debug.LogError(www.error);
             }
-
+            else
+            {
+                Debug.Log("Form upload complete!");
+            }
         }
     }
     
     string GetCorrectAnswerForQuestion(int questionIndex)
     {
-        // Replace this with the actual correct answers for each question
+        
         string[] correctAnswers = { "False", "True", "True", "False", "True", "True", "False", "True", "True", "False" };
         return correctAnswers[questionIndex];
+    }
+    
+    void PlayToggleSoundEffect()
+    {
+        if (toggleSoundEffect != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(toggleSoundEffect);
+        }
     }
 
 }

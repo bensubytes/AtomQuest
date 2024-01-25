@@ -1,21 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Brainbar : MonoBehaviour
 {
     public Slider slider;
     public float animationDuration = 0.5f;
 
-    public int maxKnowledge = 100;
+    public int maxKnowledge = 66;
     public int currentKnowledge = 0;
     public int knowledgePointsPerLevel = 9;
 
     private static Brainbar instance;
+    
 
     void Awake()
     {
-        if (instance == null)
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        
+        if (instance == null && 
+            (currentSceneName == "Cutscene2" || currentSceneName == "Post-Quiz" || currentSceneName == "Results"))
+        {
+            Destroy(gameObject);
+        }
+        else if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -24,14 +33,14 @@ public class Brainbar : MonoBehaviour
 
     void Start()
     {
-        SetMaxBrain(100);
+        SetMaxBrain(66);
         LoadKnowledge();
         SetBrain(currentKnowledge);
     }
 
     public void SetMaxBrain(int knowledge)
     {
-        slider.maxValue = knowledge;
+        slider.maxValue = maxKnowledge;
         slider.value = knowledge;
     }
 

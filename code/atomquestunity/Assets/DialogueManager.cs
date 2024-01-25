@@ -8,11 +8,14 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI nameText;
     public Animator animator;
-    public PlayerInteractionManager playerInteraction; // Reference to the PlayerInteraction script
+    public PlayerInteractionManager playerInteraction;
+    public PlayerInput playerInput;
+    public CanvasGroup dialogueCanvasGroup;
+    
 
     private Queue<string> sentences;
-    private bool isTyping;  // Flag to check if a sentence is currently being typed
-    private HashSet<string> displayedSentences; // Keep track of displayed sentences
+    private bool isTyping;  
+    private HashSet<string> displayedSentences; 
 
     void Awake()
     {
@@ -22,9 +25,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        // Lock player input when dialogue starts
-        playerInteraction.DisablePlayerInput();
-
+        dialogueCanvasGroup.alpha = 1f;
+        playerInput.SetCanMove(false); 
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
         sentences.Clear();
@@ -74,8 +76,9 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         // Unlock player input when dialogue ends
-        playerInteraction.EnablePlayerInput();
-
+        //playerInteraction.EnablePlayerInput();
+        playerInput.SetCanMove(true);
+        dialogueCanvasGroup.alpha = 0.4f;
         animator.SetBool("IsOpen", false);
     }
 }
