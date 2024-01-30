@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 393325702}
   - component: {fileID: 393325705}
   m_Layer: 0
-  m_Name: GameObject (4)
+  m_Name: AlarmSoundEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 509910108}
   - component: {fileID: 509910110}
   m_Layer: 0
-  m_Name: GameObject (3)
+  m_Name: BackgroundMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 838827814}
   - component: {fileID: 838827813}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: PunchSoundEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 1665668456}
   - component: {fileID: 1665668455}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Transition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

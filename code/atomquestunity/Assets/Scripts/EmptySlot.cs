@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,44 +5,43 @@ public class EmptySlot : MonoBehaviour, IDropHandler
 {
     public int id;
     public float snapThreshold = 50f;
-    public Brainbar brainbar;
-    public int knowledgePoints = 5;
-
     public KnowledgeManager knowledgeManager;
-    
 
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
-        if (eventData.pointerDrag != null)
+
+        if (eventData.pointerDrag == null)
+            return;
+
+        DragDrop dragDrop = eventData.pointerDrag.GetComponent<DragDrop>();
+
+        if (dragDrop == null)
+            return;
+
+        if (dragDrop.id == id)
         {
-            if (eventData.pointerDrag.GetComponent<DragDrop>().id == id)
+            RectTransform draggedRectTransform = dragDrop.GetComponent<RectTransform>();
+            RectTransform emptySlotRectTransform = GetComponent<RectTransform>();
+
+            float distance = Vector2.Distance(draggedRectTransform.anchoredPosition, emptySlotRectTransform.anchoredPosition);
+
+            if (distance <= snapThreshold)
             {
-                RectTransform draggedRectTransform = eventData.pointerDrag.GetComponent<RectTransform>();
-                RectTransform emptySlotRectTransform = GetComponent<RectTransform>();
-
-               
-                float distance = Vector2.Distance(draggedRectTransform.anchoredPosition, emptySlotRectTransform.anchoredPosition);
-
-                if (distance <= snapThreshold)
-                {
-                    draggedRectTransform.anchoredPosition = emptySlotRectTransform.anchoredPosition;
-                    knowledgeManager.ObjectDroppedCorrectly();
-                    eventData.pointerDrag.GetComponent<DragDrop>().SetPlacedCorrectly(true);
-            
-                }
-                else
-                {
-                    
-                    eventData.pointerDrag.GetComponent<DragDrop>().ResetPosition();knowledgeManager.ObjectDroppedIncorrectly();
-                }
+                draggedRectTransform.anchoredPosition = emptySlotRectTransform.anchoredPosition;
+                dragDrop.SetPlacedCorrectly(true);
+                knowledgeManager.ObjectDroppedCorrectly();
             }
             else
             {
-                eventData.pointerDrag.GetComponent<DragDrop>().ResetPosition();
+                dragDrop.ResetPosition();
                 knowledgeManager.ObjectDroppedIncorrectly();
             }
         }
+        else
+        {
+            dragDrop.ResetPosition();
+            knowledgeManager.ObjectDroppedIncorrectly();
+        }
     }
-
 }
