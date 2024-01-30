@@ -705,7 +705,7 @@ PrefabInstance:
     - target: {fileID: 3370779976085393186, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5363ba727fc6b284abf13983450c2ebf, type: 3}
+      objectReference: {fileID: 21300000, guid: d24703096b6ddd842b21fe1e38d4c363, type: 3}
     - target: {fileID: 3370779976085393186, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -724,19 +724,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3370779976085393187, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4819433
+      value: 0.4761118
       objectReference: {fileID: 0}
     - target: {fileID: 3370779976085393187, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4066789
+      value: 0.44572005
       objectReference: {fileID: 0}
     - target: {fileID: 3370779976085393187, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.64
+      value: 2.6331
       objectReference: {fileID: 0}
     - target: {fileID: 3370779976085393187, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39773178
+      value: -0.4461
       objectReference: {fileID: 0}
     - target: {fileID: 3370779976085393187, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_LocalPosition.z
@@ -800,6 +800,7 @@ PrefabInstance:
       objectReference: {fileID: 2070917796}
     m_RemovedComponents:
     - {fileID: 3370779976085393185, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
+    - {fileID: 3370779976085393196, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
 --- !u!1 &105331878
 GameObject:
@@ -1180,7 +1181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139103222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.64, y: -0.15773201, z: -0.06917858}
+  m_LocalPosition: {x: 2.6331, y: -0.20610023, z: -0.06917858}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2830,7 +2831,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -2858,7 +2859,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2
@@ -5716,8 +5717,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505681377}
-  - component: {fileID: 505681376}
-  - component: {fileID: 505681378}
   - component: {fileID: 505681382}
   - component: {fileID: 505681379}
   - component: {fileID: 505681380}
@@ -5729,23 +5728,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &505681376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505681375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e0e52a949480b94f96b6c739d0540b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimations:
-  - {fileID: 11400000, guid: 8c6fb9e0cf0082847b8a6aeb67204009, type: 2}
-  - {fileID: 11400000, guid: 8c6fb9e0cf0082847b8a6aeb67204009, type: 2}
-  nameTag: {fileID: 1885813913}
-  hintTag: {fileID: 228046288}
 --- !u!4 &505681377
 Transform:
   m_ObjectHideFlags: 0
@@ -5761,20 +5743,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &505681378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505681375}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d428e71ebd622b4e9352e49908f55d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerWalking: 0
-  playerTransform: {fileID: 2070917791}
 --- !u!114 &505681379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7696,7 +7664,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -7724,7 +7692,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2
@@ -12249,7 +12217,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -12277,7 +12245,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2
@@ -16035,7 +16003,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -16063,7 +16031,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2
@@ -17938,7 +17906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738407670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.64, y: -0.15773201, z: -0.06917858}
+  m_LocalPosition: {x: 2.6331, y: -0.20610023, z: -0.06917858}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21154,22 +21122,6 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3370779976085393186, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
   m_PrefabInstance: {fileID: 85118307}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2070917802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124754438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf4389c4f0e5f8447822e6742bd85137, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0000
-  slots:
-  - {fileID: 1998422668}
-  - {fileID: 394127340}
 --- !u!50 &2070917807
 Rigidbody2D:
   serializedVersion: 4
@@ -21685,7 +21637,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -21713,7 +21665,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2

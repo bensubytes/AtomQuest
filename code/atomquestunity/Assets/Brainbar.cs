@@ -8,7 +8,7 @@ public class Brainbar : MonoBehaviour
     public Slider slider;
     public float animationDuration = 0.5f;
 
-    public int maxKnowledge = 66;
+    public int maxKnowledge = 86;
     public int currentKnowledge = 0;
     public int knowledgePointsPerLevel = 9;
 
@@ -33,7 +33,7 @@ public class Brainbar : MonoBehaviour
 
     void Start()
     {
-        SetMaxBrain(66);
+        SetMaxBrain(86);
         LoadKnowledge();
         SetBrain(currentKnowledge);
     }

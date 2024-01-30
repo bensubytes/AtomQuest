@@ -3,37 +3,42 @@ using TMPro;
 
 public class QuizResults : MonoBehaviour
 {
-
     public TMP_Text scoreTextPre;
     public TMP_Text scoreTextPost;
-    public TMP_Text resultText;  // Reference to the Text component to display the results
+    public TMP_Text resultText;
+    public TMP_Text fullPointsText;
 
-    void Start()
+    private void Start()
     {
         CompareResults();
     }
 
-    void CompareResults()
+    private void CompareResults()
     {
-        int correctCount1 = PlayerPrefs.GetInt("CorrectCountQuiz1", 0);
-        Debug.Log(PlayerPrefs.GetInt("CorrectCountQuiz1"));
-        int correctCount2 = PlayerPrefs.GetInt("CorrectCountQuiz2", 0);
-        Debug.Log(PlayerPrefs.GetInt("CorrectCountQuiz2"));
-
-        scoreTextPre.text = correctCount1.ToString();
-        scoreTextPost.text = correctCount2.ToString();
+        int correctCountQuiz1 = PlayerPrefs.GetInt("CorrectCountQuiz1", 0);
+        int correctCountQuiz2 = PlayerPrefs.GetInt("CorrectCountQuiz2", 0);
+        int knowledgePoints = PlayerPrefs.GetInt("KnowledgePoints", 0);
         
-        if (correctCount1 > correctCount2)
+
+        scoreTextPre.text = correctCountQuiz1.ToString();
+        scoreTextPost.text = correctCountQuiz2.ToString();
+
+        if (correctCountQuiz1 > correctCountQuiz2)
         {
             resultText.text = "Quiz 1 has more correct answers than Quiz 2.";
         }
-        else if (correctCount1 < correctCount2)
+        else if (correctCountQuiz1 < correctCountQuiz2)
         {
             resultText.text = "Good job, your knowledge improved!";
         }
         else
         {
             resultText.text = "Both quizzes have the same number of correct answers.";
+        }
+
+        if (knowledgePoints >= 87)
+        {
+            fullPointsText.text = "Brainpower maxed out! Congratulations!";
         }
     }
 }

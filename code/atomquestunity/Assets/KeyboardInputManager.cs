@@ -1,8 +1,6 @@
 using System;
 using TMPro;
 using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class KeyboardInputManager : MonoBehaviour

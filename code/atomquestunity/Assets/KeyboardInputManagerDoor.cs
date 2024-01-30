@@ -29,12 +29,8 @@ public class KeyboardInputManagerDoor : MonoBehaviour
         {
             resultText.text = "True";
             resultText.color = Color.green;
-
-            // Load the scene if the result is true
             LoadScene();
             
-            // Alternatively, you can uncomment the following line if you still want to call ObjectDroppedCorrectly
-            // knowledgeManager.ObjectDroppedCorrectly();
         }
         else
         {

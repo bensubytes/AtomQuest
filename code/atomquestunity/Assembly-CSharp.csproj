@@ -47,7 +47,6 @@
      <Compile Include="Assets\KnowledgeManager.cs" />
      <Compile Include="Assets\Scripts\Questions.cs" />
      <Compile Include="Assets\DialogueManager.cs" />
-     <Compile Include="Assets\Scripts\Playermovement.cs" />
      <Compile Include="Assets\LevelTimer.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\SceneTransition.cs" />
      <Compile Include="Assets\DialogueTrigger2.cs" />
@@ -59,7 +58,6 @@
      <Compile Include="Assets\Scripts\ClickManager.cs" />
      <Compile Include="Assets\KeyboardInputManager.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\URLOpener.cs" />
-     <Compile Include="Assets\Scripts\PlayerBaseState.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\CleanButton.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Utils.cs" />
@@ -81,7 +79,6 @@
      <Compile Include="Assets\Dialogue.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Transition.cs" />
      <Compile Include="Assets\ButtonClickHandler.cs" />
-     <Compile Include="Assets\Scripts\PlayerIdleState.cs" />
      <Compile Include="Assets\InputFieldController.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Tooltip.cs" />
      <Compile Include="Assets\Slot.cs" />
@@ -92,7 +89,6 @@
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\Popup.cs" />
      <Compile Include="Assets\Scripts\AnimationData.cs" />
      <Compile Include="Assets\Pickup.cs" />
-     <Compile Include="Assets\Scripts\PlayerJumpingState.cs" />
      <Compile Include="Assets\GUIPack-Clean&amp;Minimalist\Demo\Scripts\PopupOpener.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Brainbar.cs" />

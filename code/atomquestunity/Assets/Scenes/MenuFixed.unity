@@ -1902,6 +1902,14 @@ PrefabInstance:
       value: Atom Quest
       objectReference: {fileID: 0}
     - target: {fileID: 6127674673456781304, guid: ddb86ce65fd264826beccea1413cf4f1, type: 3}
+      propertyPath: m_fontSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127674673456781304, guid: ddb86ce65fd264826beccea1413cf4f1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127674673456781304, guid: ddb86ce65fd264826beccea1413cf4f1, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}

@@ -670,7 +670,7 @@ PrefabInstance:
     - target: {fileID: 3370779976085393186, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5363ba727fc6b284abf13983450c2ebf, type: 3}
+      objectReference: {fileID: 21300000, guid: d24703096b6ddd842b21fe1e38d4c363, type: 3}
     - target: {fileID: 3370779976085393186, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -2158,7 +2158,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -2186,7 +2186,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2
@@ -4008,8 +4008,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505681377}
-  - component: {fileID: 505681376}
-  - component: {fileID: 505681378}
   - component: {fileID: 505681384}
   - component: {fileID: 505681380}
   - component: {fileID: 505681381}
@@ -4022,23 +4020,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &505681376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505681375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e0e52a949480b94f96b6c739d0540b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimations:
-  - {fileID: 11400000, guid: 8c6fb9e0cf0082847b8a6aeb67204009, type: 2}
-  - {fileID: 11400000, guid: 8c6fb9e0cf0082847b8a6aeb67204009, type: 2}
-  nameTag: {fileID: 1885813913}
-  hintTag: {fileID: 228046288}
 --- !u!4 &505681377
 Transform:
   m_ObjectHideFlags: 0
@@ -4054,20 +4035,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &505681378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505681375}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d428e71ebd622b4e9352e49908f55d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerWalking: 0
-  playerTransform: {fileID: 2070917791}
 --- !u!114 &505681380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4629,7 +4596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575920328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0320725, y: 3.647578, z: -10.169179}
+  m_LocalPosition: {x: 7.032157, y: 3.647578, z: -10.169179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5682,7 +5649,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -5710,7 +5677,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2
@@ -5832,7 +5799,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -5860,7 +5827,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2
@@ -8094,7 +8061,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -8122,7 +8089,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2
@@ -10798,7 +10765,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -10826,7 +10793,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2
@@ -11834,7 +11801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738407670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0320725, y: 3.647578, z: -10.169179}
+  m_LocalPosition: {x: 7.032157, y: 3.647578, z: -10.169179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14264,26 +14231,6 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3370779976085393186, guid: d03bce1c6e99b8e4b8fc73864dbcd6de, type: 3}
   m_PrefabInstance: {fileID: 85118307}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2070917797
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858691025}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a0f33bf15a34e5f4996e143fbc33b1f0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2076638881
 GameObject:
   m_ObjectHideFlags: 0
@@ -14610,7 +14557,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 505681378}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
           m_MethodName: GoToClick
           m_Mode: 2
@@ -14638,7 +14585,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 505681376}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: UpdateNameTag
           m_Mode: 2

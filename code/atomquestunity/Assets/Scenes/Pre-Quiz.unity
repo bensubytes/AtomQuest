@@ -616,6 +616,10 @@ PrefabInstance:
       value: How old are you?
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -1076,7 +1080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214853384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.56, y: 1.26, z: 0}
+  m_LocalPosition: {x: 4.15, y: 2.4299998, z: 0}
   m_LocalScale: {x: 0.3555, y: 0.3555, z: 0.3555}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2540,6 +2544,10 @@ PrefabInstance:
       value: CaCl2 is the compound called Calcium Chloride.
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -2778,6 +2786,10 @@ PrefabInstance:
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_text
       value: A nucleus contains protons and neutrons.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
@@ -3873,6 +3885,10 @@ PrefabInstance:
       value: Do you play video games?
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -4146,7 +4162,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_text
-      value: HCN is the formula for Hdyrochloric Acid.
+      value: HCN is the formula for Hydrochloric Acid.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
@@ -4300,7 +4320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.41, y: 1.17}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &846998739 stripped
@@ -5336,6 +5356,10 @@ PrefabInstance:
         anion + adding the suffix "ide".
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -5794,6 +5818,10 @@ PrefabInstance:
       value: Natrium, Potassium and Rubidium are alkali Metals.
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -5924,7 +5952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172323752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2300024, y: 1.78, z: 0}
+  m_LocalPosition: {x: 5.8200026, y: 2.9499998, z: 0}
   m_LocalScale: {x: 1.0977, y: 0.707, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6498,6 +6526,10 @@ PrefabInstance:
         called mass number A.'
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -7016,7 +7048,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f1ea02531aa5f884f9da17952ecd51ad, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7676,8 +7708,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_text
-      value: "This is a correctly balanced equation:\n CaCO3 + HCl = CaCl2 + CO2
+      value: "This is a correctly balanced equation:\n CaCO3 + HCl -> CaCl2 + CO2
         + H2O"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
@@ -7827,7 +7863,11 @@ PrefabInstance:
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_text
       value: "Elements differ according to how many\n protons their atoms contain.\nThis
-        value is called atomic number Z"
+        value is called atomic number Z."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
@@ -8423,7 +8463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_text
-      value: "An atom consists of only neutrons and \nprotons"
+      value: "An atom consists of only neutrons and \nprotons."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
@@ -8759,6 +8803,10 @@ PrefabInstance:
         + 4H20'
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -8905,7 +8953,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_text
-      value: "Whats your occupation\n or major if you are student?"
+      value: "What's your occupation\n or major if you are a student?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment

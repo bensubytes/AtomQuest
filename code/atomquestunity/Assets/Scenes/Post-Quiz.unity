@@ -552,7 +552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214853384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.56, y: 1.26, z: 0}
+  m_LocalPosition: {x: 4.1299977, y: 2.46, z: 0}
   m_LocalScale: {x: 0.3555, y: 0.3555, z: 0.3555}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1620,6 +1620,10 @@ PrefabInstance:
       value: CaCl2 is the compound called Calcium Chloride.
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -1858,6 +1862,10 @@ PrefabInstance:
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_text
       value: A nucleus contains protons and neutrons.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
@@ -2333,7 +2341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 676, y: 143}
+  m_AnchoredPosition: {x: 629.55975, y: 272.59998}
   m_SizeDelta: {x: -1693.8, y: 160.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &569046687
@@ -2356,12 +2364,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Thank you for playing Atom Quest.
-
-    Please complete this quiz before
-
-    closing
-    this window.'
+  m_text: "Thank you for playing Atom Quest.\nPlease complete this quiz \nto see
+    your results."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 530df87dd522d457791fe57157d9eeb6, type: 2}
   m_sharedMaterial: {fileID: -6806164723919233190, guid: 530df87dd522d457791fe57157d9eeb6, type: 2}
@@ -2781,7 +2785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.14, y: -1061.5953}
+  m_AnchoredPosition: {x: 29.14, y: -1051.9543}
   m_SizeDelta: {x: 194.56, y: 3031.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679636527
@@ -3120,6 +3124,10 @@ PrefabInstance:
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_text
       value: HCN is Hydrochloric acid.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
@@ -3957,6 +3965,10 @@ PrefabInstance:
         + adding the suffix "ide".
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -4415,6 +4427,10 @@ PrefabInstance:
       value: Natrium, Potassium and Rubidium are Alkali Metals.
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -4545,7 +4561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172323752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2300024, y: 1.78, z: 0}
+  m_LocalPosition: {x: 5.8, y: 2.98, z: 0}
   m_LocalScale: {x: 1.0977, y: 0.707, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5114,6 +5130,10 @@ PrefabInstance:
 
         neutrons is
         called mass number A.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
@@ -5990,8 +6010,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_text
-      value: "This is a correctly balanced equation:\n CaCO3 + HCl = CaCl2 + CO2
+      value: "This is a correctly balanced equation:\n CaCO3 + HCl -> CaCl2 + CO2
         + H2O"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
@@ -6142,6 +6166,10 @@ PrefabInstance:
       propertyPath: m_text
       value: "Elements differ according to how many\n protons their atoms contain.\nThis
         value is called atomic number Z"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
@@ -6740,6 +6768,10 @@ PrefabInstance:
       value: "An atom consists of only neutrons and \nprotons"
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
@@ -6895,6 +6927,10 @@ PrefabInstance:
 
         C3H8 + 5O2 -> 3CO2
         + 4H20'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741387291165859682, guid: e63741c64101f4e1b92603935a9bdaa0, type: 3}
       propertyPath: m_textAlignment

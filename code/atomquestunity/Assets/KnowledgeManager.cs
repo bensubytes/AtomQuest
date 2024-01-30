@@ -1,6 +1,3 @@
-// KnowledgeManager.cs
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KnowledgeManager : MonoBehaviour
@@ -45,14 +42,11 @@ public class KnowledgeManager : MonoBehaviour
 
     void CheckLevelCompletion()
     {
-        int completedLevels = Mathf.Max(0, GetCurrentKnowledge() / brainbar.knowledgePointsPerLevel);
-        Debug.Log("Current Knowledge: " + GetCurrentKnowledge());
-        Debug.Log("Completed Levels (PlayerPrefs): " + completedLevels);
+        int completedLevels = Mathf.Max(0, GetCurrentKnowledge() / brainbar.knowledgePointsPerLevel); 
 
         PlayerPrefs.SetInt("CompletedLevels", completedLevels);
         PlayerPrefs.Save();
-
-        Debug.Log("Completed Levels (PlayerPrefs) Saved: " + completedLevels);
+        
     }
 
     public bool HasEnoughKnowledge(float requiredKnowledge)
@@ -68,8 +62,6 @@ public class KnowledgeManager : MonoBehaviour
     {
         AdjustKnowledge(3);
         FeedbackAudio(rightClip);
-        Debug.Log("Adjusting");
-        Debug.Log(GetCurrentKnowledge());
     }
 
     public void ObjectDroppedIncorrectly()
@@ -79,7 +71,7 @@ public class KnowledgeManager : MonoBehaviour
             AdjustKnowledge(-1);
             FeedbackAudio(wrongClip);
             messageDisplay.DisplayMessage(wrongPlacementMessage);
-            Debug.Log("Deductingpoints");
+       
         }
         
     }

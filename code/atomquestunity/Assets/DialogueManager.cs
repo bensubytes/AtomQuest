@@ -33,7 +33,6 @@ public class DialogueManager : MonoBehaviour
 
         foreach (string sentence in dialogue.sentences)
         {
-            // Only enqueue sentences that haven't been displayed yet
             if (!displayedSentences.Contains(sentence))
             {
                 sentences.Enqueue(sentence);
@@ -75,7 +74,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        // Unlock player input when dialogue ends
+      
         //playerInteraction.EnablePlayerInput();
         playerInput.SetCanMove(true);
         dialogueCanvasGroup.alpha = 0.4f;
